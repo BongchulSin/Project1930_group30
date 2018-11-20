@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Epool Dashboard</title>
+  <title>Create A Pool</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-      body{
-          margin: 0;
-          padding: 0;
+      body, html{
+        margin: 0;
+        padding: 0;
+        height: 100%;
       }
-      .sidebar{
+
+      #cont {
+        height: 100%;
+      }
+
+      #sidebar{
         float: left;
         box-shadow: 5px 10px 8px #888888;
-        height: 650px;
+        height: 100%;
         width: 300px;
-        /* margin-top: -90px; */
       }
-      .main{
+      #main{
           text-align: center;
+      }
+
+      #main form h1 {
+        font-size: 20pt;
+        text-shadow: 1px 1px #9b9b9b;
       }
 
       #routename {
@@ -25,23 +35,63 @@
       }
 
       .textfield {
-        padding-right: 90px;
-        padding-top: 20px;
+        padding-top: 12px;
+        padding-left: 20px;
+        padding-right: 20px;
         margin-bottom: 30px;
+        border-radius: 4px;
+        /* font-size: 15pt; */
       }
 
       .buttons {
         margin-bottom: 30px;
+        width: 130px;
+        height: 45px;
+      }
+      .up:focus {
+        background-color: #1892dd;
+        color: white;
+      }
+
+      #dates {
+        background-color: #1892dd;
+        color: white;
+      }
+
+      button[type="submit"] {
+        background-color: #d69142;
+        color: white;
+      }
+      #userinfo {
+        width: 100%;
+        height: 100px;
+        background-color: #005a96;
+      }
+
+      #userinfo img {
+        transform: translate(20%, 25%);
+        float: left;
+      }
+
+      #sidebar h3 {
+        padding-left: 10px;
+      }
+
+      #userinfo p {
+        float: left;
+        transform: translate(20%, 25%);
+        color: white;
+        font-weight: bold;
       }
 
    </style>
 </head>
 <body>
-    <div class="cont">
-      <div class="sidebar">
-        <div class="userinfo"><h2>User1</h2></div>
+    <div id="cont">
+      <div id="sidebar">
+        <div id="userinfo"><img src="ResourcesDavid/user.png" alt="USER"/><p id="username">User Name</p></div>
         <h3><a href>Dashboard</a></h3>
-        <h3><a href>Ridesd</a></h3>
+        <h3><a href>Rides</a></h3>
         <h3><a href>Schedule</a></h3>
         <h3><a href>History</a></h3>
         <h3><a href>Settings</a></h3>
@@ -49,19 +99,21 @@
         <h3><a href>Help</a></h3>
       </div>
 
-      <div class="main">
-        <input id="routename" class="textfield" type="text" name="route" placeholder="Enter Route Name">
-        <br/>
-        <h1>SELECT WHETHER DRIVER OR PASSENGER</h1>
-        <button type="button" name="driver" class="buttons">DRIVER</button>
-        <button type="button" name="passenger" class="buttons">PASSENGER</button>
-        <br/>
-        <input id="start" class="textfield" type="text" name="start" placeholder="Enter Starting Location">
-        <br/>
-        <input id="destination" class="textfield" type="text" name="destination" placeholder="Enter Destination">
-        <br/>
-        <button type="button" name="driver" class="buttons">DATES</button>
-        <button type="submit" name="submit" class="buttons">SUBMIT</button>
+      <div id="main">
+        <form>
+          <input id="routename" class="textfield" type="text" name="route" placeholder="Enter Route Name">
+          <br/>
+          <h1>SELECT WHETHER DRIVER OR PASSENGER</h1>
+          <button type="button" name="driver" class="buttons up">DRIVER</button>
+          <button type="button" name="passenger" class="buttons up">PASSENGER</button>
+          <br/>
+          <input id="start" class="textfield" type="text" name="start" placeholder="Enter Starting Location">
+          <br/>
+          <input id="destination" class="textfield" type="text" name="destination" placeholder="Enter Destination">
+          <br/>
+          <button id="dates" type="button" name="dates" class="buttons">DATES</button>
+          <button type="submit" name="submit" class="buttons">SUBMIT</button>
+        </form>
       </div>
     </div>
 
